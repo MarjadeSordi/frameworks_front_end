@@ -1,17 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { TabelaProdutosComponent } from './tabela-produtos.component';
 
-describe('TabelaProdutosComponent', () => {
-  let component: TabelaProdutosComponent;
-  let fixture: ComponentFixture<TabelaProdutosComponent>;
+import { PageNotFoundComponent } from './page-not-found.component';
+
+describe('PageNotFoundComponent', () => {
+  let component: PageNotFoundComponent;
+  let fixture: ComponentFixture<PageNotFoundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TabelaProdutosComponent ]
+      declarations: [ PageNotFoundComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TabelaProdutosComponent);
+    fixture = TestBed.createComponent(PageNotFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

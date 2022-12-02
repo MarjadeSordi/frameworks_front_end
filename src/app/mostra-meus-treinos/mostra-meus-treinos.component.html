@@ -1,0 +1,19 @@
+
+<table *ngIf="listaTreino.length > 0"> 
+    <tr>
+        <th>TIPO</th>
+        <th>CATEGORIAS</th>
+        <th>TEMPO DE TREINO </th>
+        <th>DATA</th>
+    </tr>
+<tr *ngFor="let item of listaTreino; let i = index" > 
+    <td> {{item.tipo }}</td>
+    <td>{{item.tempoDeTreino }}</td>
+    <td>{{item.data  | date:"dd/MM/yyyy"}}</td>
+    <td>{{item.categoria}}</td>
+      
+    </tr>
+   
+    
+  
+</table>

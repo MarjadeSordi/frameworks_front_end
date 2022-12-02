@@ -1,18 +1,24 @@
 <h3>{{titulo}}</h3>
+<label> </label>
+<input type="'text" [(ngModel)] = 'nomePesquisado' /> 
 <table *ngIf="lista.length > 0">
     <tr>
         <th>ID</th>
-        <th>NOME</th>
-        <th>MARCA</th>
-        <th>PREÇO</th>
-        <th>VALIDADE</th>
+        <th>TIPO</th>
+        <th>CATEGORIAS</th>
+        <th>TEMPO DE TREINO </th>
+        <th>DATA</th>
     </tr>
-    <tr *ngFor="let prod of lista">
-        <td>{{prod.id}}</td>
-        <td>{{prod.nome}}</td>
-        <td>{{prod.marca | uppercase}}</td>
-        <td>{{prod.preco | moeda}}</td>
-        <td>{{prod.validade | date:"dd/MM/yyyy"}}</td>
-    </tr>
+
+<!--<tr *ngFor="let item of lista | filtroPesquisa:nomePesquisado">
+    <tr>
+                <td>{{item._id}}</td>
+        <td>{{item.tipo}}</td>
+        <td>{{item.empoDeTreino }}</td>
+        <td>{{item.data  | date:"dd/MM/yyyy"}}</td>
+ 
+    </tr>-->
+
 </table>
+
 <p *ngIf="lista.length <= 0"> NÃO HÁ PRODUTOS CADASTRADOS! </p>

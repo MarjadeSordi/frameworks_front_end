@@ -1,22 +1,38 @@
+import { ThisReceiver } from '@angular/compiler';
 import { Component, Input, OnInit } from '@angular/core';
-import { Produto } from '../produto';
-import { ProdutoService } from '../produto.service';
+import { Treino } from '../treino';
+import { TreinoApiService } from '../treino-api.service';
 
 @Component({
   selector: 'tabela-produtos',
   templateUrl: './tabela-produtos.component.html',
   styleUrls: ['./tabela-produtos.component.css']
 })
+
 export class TabelaProdutosComponent implements OnInit {
-  titulo = "Tabela de Produtos";
+  titulo = "Treinos";
+  nomePesquisado = ""; 
+
   
-  lista: Produto[] = []
+  lista: Treino[] = []
   
-  constructor(private servico: ProdutoService) {
-    this.lista = this.servico.listar();
+  constructor(private servico: TreinoApiService) {
+    this.listar()
+  }
+
+  listar() {
+    this.servico.listar().subscribe(
+      (data) => {
+        this.lista = data; 
+        console.error(this.lista)
+      }
+    )
+
   }
 
   ngOnInit(): void {
   }
+
+
 
 }

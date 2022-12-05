@@ -11,7 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 
 export class HomePageComponent implements OnInit {
-  titulo = "Bem vindos! Para acessar seus treinos, faça login";
+  titulo = "Para acessar seus treinos faça login:";
   botaoLogar = 'Fazer Login'
   usuario = '';
   senha = '';

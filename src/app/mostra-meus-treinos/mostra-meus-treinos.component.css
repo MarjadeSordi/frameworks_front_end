@@ -1,9 +1,25 @@
 table {
     border-collapse: collapse;
     width: 70%;
+    margin-top: 5%;
 }
 
 th, td {
     text-align: left;
     padding: 8px
+}
+
+span{
+    margin-left: 300px;
+    color: black;
+}
+
+.capsula{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h3{
+    margin-top: 2%;
 }

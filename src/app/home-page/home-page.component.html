@@ -1,4 +1,6 @@
-<h3>Login</h3>
+<div class="capsule"> 
+<div class="box"> 
+<h3>{{titulo}}</h3>
 
 <label for="usuario">Usuario:</label>
 <input [(ngModel)]="usuario" id="id">
@@ -11,8 +13,7 @@
 
 
 
-<button (click)="logar()">{{botaoLogar}}</button>
+<button class="btn btn-light" (click)="logar()">{{botaoLogar}}</button>
 <h4> {{mensagem}} </h4>
-
-
-<br />
+</div>
+</div>

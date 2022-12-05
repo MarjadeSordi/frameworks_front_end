@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <ul class="navbar-nav">
+        <li  class="nav-item"><a class="nav-item" routerLink="/tabela"> <span>  Meus treinos  </span>   </a> </li>
+        <li class="nav-item"><a  class="nav-item" routerLink="/formulario"> <span> Cadastrar novo treino </span> </a></li>
+    </ul>
+</nav>
+
+<div class="form"> 
+
+<h3>Cadastre seus Treinos </h3>
+
+<label for="tipo">Tipo:</label>
+<input [(ngModel)]="treino.tipo" class="form-control" id="tipe">
+<br />
+
+<label for="preco">Tempo de Treino :</label>
+<input type="number" [(ngModel)]="treino.tempoDeTreino" class="form-control" id="tempoDeTreino">
+<br />
+
+<label for="data"> Data :</label>
+<input type="date"[ngModel]="treino.data | date:'YYYY-MM-dd'"  class="form-control" (ngModelChange)="treino.data=$event"  id="data">
+<br />
+
+<label> Categoria </label>
+<select [(ngModel)]="treino.categoria" class="form-control" >
+    <option *ngFor="let item of listaCategoria; let i = index" value={{item._id}}> {{item.nome}}</option>
+</select>
+<br/>
+<button  class="btn btn-light"  (click)="salvar()">{{botaoAcao}}</button>
+
+
+<h4>{{mensagem}}</h4>
+
+
+
+<button type="submit" class="btn btn-light" (click)="cancelar()"> Meus Treinos</button>
+<br />
+</div>

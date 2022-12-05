@@ -1,19 +1,18 @@
 import { isNgTemplate } from '@angular/compiler';
 import { Pipe, PipeTransform } from '@angular/core';
-import { Produto } from './produto';
+import { Treino } from './treino';
 
 @Pipe({
-  name: 'filtroPesquisa',
-  pure: false
+  name: 'filtroPesquisa'
 })
 export class FiltroPesquisaPipe implements PipeTransform {
 
-  transform(listaProdutos: Produto[], valor?: string): Produto[] {
+  transform(listaTreino: Treino[], valor?: string): Treino[] {
     const nome = valor ?valor :"";
     console.log(nome);
-    return listaProdutos.filter(
-      (produto) => 
-        produto.nome.toLocaleLowerCase().includes(nome.toLowerCase())
+    return listaTreino.filter(
+      (item) => 
+        item.tipo.toLocaleLowerCase().includes(nome.toLowerCase())
     );
     }
 }
